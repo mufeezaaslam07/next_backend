@@ -17,7 +17,7 @@ export default async function handle(req, res) {
 
   if (method === "POST") {
     const { title, description, category, price, images } = req.body;
-    console.log("Received data on server:", req.body)
+    console.log("Received data on server:", req.body);
     const productDoc = await Product.create({
       title,
       description,
@@ -25,20 +25,13 @@ export default async function handle(req, res) {
       price,
       images,
     });
-    console.log(productDoc)
+    console.log(productDoc);
     res.json(productDoc);
   }
 
   if (method === "PUT") {
-    const {
-      title,
-      description,
-      price,
-      category,
-      images,
-      properties,
-      _id,
-    } = req.body;
+    const { title, description, price, category, images, properties, _id } =
+      req.body;
     await Product.updateOne(
       { _id },
       { title, description, price, category, images, properties }
