@@ -151,7 +151,7 @@ function Categories({ swal }) {
 
               {properties.length > 0 &&
                 properties.map((property, index) => (
-                  <div key={category._id} className="flex gap-1 ">
+                  <div key={index} className="flex gap-1 ">
                     <input
                       type="text"
                       value={property.name}
